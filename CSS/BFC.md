@@ -14,14 +14,23 @@
 * 指的是页面的一块渲染区域
 * 有自己的渲染规则，决定了其元素如何定位，以及和其他元素的关系和相互作用
 
-## BFC解决问题
-* 清除浮动
-* 避免margin重叠
-
-
 ## 产生BFC的条件
 * 根元素html
 * 浮动元素 float/left/right
 * 绝对定位 position/absolute/fixed
 * 内联块 display/inline-block/flex/grid
 * overflow:hidden
+
+## BFC的特性
+* 内部的Box会在垂直方向，一个接一个的放置
+* BFC元素的高度会包含浮动元素
+* BFC垂直方向的距离由margin决定，同时相邻的块级盒子的垂直边距会产生折叠
+...
+
+
+## BFC解决问题
+* 清除浮动
+* 避免margin重叠
+
+## 举例
+
