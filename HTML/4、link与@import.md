@@ -1,6 +1,9 @@
 # link与@import
 link、@import，都是用来引入css
 
+## 优先级
+* link > @import
+
 ## 两种方式的区别
 * 加载顺序
   * link引用的css会被同时加载，
