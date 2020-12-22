@@ -133,4 +133,36 @@
 * useContext
 * useCallback
 * useRef
+* 基本用法
+  
+  * `useRef`返回一个`ref`对象，返回的`ref`对象在组件的整个生命周期保持不变
+  ```js
+  const refContainer=useRef(initialState)
+
+  const refContainer=useRef(0)
+  // 返回结果
+  {current: 0}
+  ```
+* 常见的使用场景
+  
+  * 保存一个数据，这个对象在整个生命周期可以保持不变
+  ```js
+  const [count, setCount] = useState(0);
+  const numRef = useRef(count);
+
+  // 将上次的count进行保存，在count发生改变时,重新保存count
+  // 在点击button时,增加count时,会调用useEffect函数,渲染DOM后,会重新将上一次的值进行保存,使用ref保存上一次的某一个值不会触发render
+  useEffect(() => {
+    numRef.current = count;
+  }, [count]);
+
+  <div>count 上次的值：{numRef.current}</div>
+  <div>count 这次的值：{count}</div>
+  <button onClick={(e) => setCount(count + 10)}>+10</button>
+  ```
+
+  * 引入`DOM`(或者组件)元素，但是前提条件需要是`class`组件
+  
+ 
+
 
