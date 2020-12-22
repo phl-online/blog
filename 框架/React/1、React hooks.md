@@ -163,6 +163,33 @@
 
   * 引入`DOM`(或者组件)元素，但是前提条件需要是`class`组件
   
- 
+  ```js
+  class childTest extends React.Component {
+    render() {
+      return <div>childTest</div>
+    }
+  }
+
+  export default function demo() {
+    const titleRef = useRef()
+    const cpnRef = useRef()
+
+    function changeDOM() {
+      // 修改DOM
+      titleRef.current.innerHTML = 'hello world'
+      console.log(cpnRef.current)
+    }
+
+    return (
+      <div>
+        {/* 1.修改DOM元素 */}
+        <h2 ref={titleRef}>RefHookDemo01</h2>
+        {/* 2.获取class组件 */}
+        <ChildCpn ref={cpnRef} />
+        <button onClick={changeDOM}>修改DOM</button>
+      </div>
+    )
+  }
+  ```
 
 
