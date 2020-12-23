@@ -1,6 +1,7 @@
 ## React
 * 各种考点
   * [x] [React 灵魂 23 问，你能答对几个？](https://zhuanlan.zhihu.com/p/304213203)
+  *  [x] [React  面试题汇总](https://zhuanlan.zhihu.com/p/304213203)
 
 * hooks
   * [x] [烤透 React Hook](https://juejin.cn/post/6867745889184972814)

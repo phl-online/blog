@@ -7,7 +7,7 @@
 
 ## 具体使用
 * **useState**
-* 基本语法
+* `基本语法`
   
   ```js
   const [state,setState]=useState(initialState)
@@ -39,7 +39,7 @@
   
 
 
-* 看个🌰
+* `看个`🌰
   ```js
   import React, { useState} from "react";
   const [count, setCount]= useState(0)
@@ -63,7 +63,7 @@
 
 
 * **useEffect**
-* 基本描述
+* `基本描述`
   
   * 主要提供了页面钩子方法，完成一些类似于class组件中生命周期<br/>`componentDidMount` 挂载<br/> `componentDidUpdate` 更新<br/>`componentWillUnmount` 卸载<br/>的功能
   * 例如像：网络请求、手动更新`DOM`、一些事件的监听，都是`React`更新`DOM`的一些副作用
@@ -74,7 +74,7 @@
     console.log('useEffect被执行了')
   })
   ```
-* 基本用法
+* `基本用法`
 * **作用**：通过`useEffect`的Hook，告诉`React`需要在渲染后执行某些操作
 * **参数**：`useEffect`要求我们传入一个回调函数，在`React`执行完更新`DOM`操作之后，就会回调这个函数
 * **执行时机**：首次渲染之后，或者每次更新状态之后，都会执行这个回调函数
@@ -102,7 +102,7 @@
     },[count])
     ```
 
-* 🤔 有些时候需要清除Effect
+* 🤔 `有些时候需要清除Effect`
 * 最常见的场景：清除订阅外部数据源，防止引起内存泄露<br/>
 
   参考代码如下
@@ -130,10 +130,10 @@
     
 	- 都是属于`Effect`的一部分
   
-* useContext
-* useCallback
+* **useContext**
+* **useCallback**
 * **useRef**
-* 基本用法
+* `基本用法`
   
   * `useRef`返回一个`ref`对象，返回的`ref`对象在组件的整个生命周期保持不变
   ```js
@@ -143,7 +143,7 @@
   // 返回结果
   {current: 0}
   ```
-* 常见的使用场景
+* `常见的使用场景`
   
   * 保存一个数据，这个对象在整个生命周期可以保持不变
   ```js
