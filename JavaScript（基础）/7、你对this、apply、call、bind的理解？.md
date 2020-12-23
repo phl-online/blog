@@ -1,5 +1,5 @@
 # 你对this、apply、call、bind的理解？
-参考文献
+**参考文献**
 * [x] [「前端料包」一文彻底搞懂JavaScript中的this、call、apply和bind](https://juejin.cn/post/6844904009308831751)
 
 **常见的一些问题汇总**
