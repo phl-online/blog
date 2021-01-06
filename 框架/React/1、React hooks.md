@@ -14,6 +14,7 @@
 | <a name="catalog-chapter-four" id="catalog-chapter-four"></a>[useCallback](#chapter-four) |
 | <a name="catalog-chapter-five" id="catalog-chapter-five"></a>[useRef](#chapter-five) |
 | <a name="catalog-chapter-six" id="catalog-chapter-six"></a>[useMemo](#chapter-six) |
+| <a name="catalog-chapter-seven" id="catalog-chapter-seven"></a>[自定义Hook](#chapter-seven) |
 <!-- 目录结束 -->
 <br/>
 
@@ -143,8 +144,48 @@
 	- 都是属于`Effect`的一部分
   
 * <a name="chapter-three" id="chapter-three"></a>**3、useContext**
+* **3.1、作用**
+  
+  * 主要用于函数组件之间传值的问题
 
+* **3.2、实际场景**
+  ```js
+  // 创建一个context
+  const TestContext=React.createContext({});
 
+  const Navbar =() =>{
+    const {username}=useContext(TestContext);
+    return(
+      <div className="navbar">
+        <p>{username}</p>
+      </div>
+    )
+  }
+  
+  const Messages =() =>{
+     const {username}=useContext(TestContext);
+     return(
+      <div className="messages">
+        <p>messages {username}</p>
+      </div>
+    )
+  }
+
+  function App() {
+    return(
+     <TestContext.Provider 
+		value={{
+			username: 'superawesome',
+		}}
+	>
+		<div className="test">
+			<Navbar />
+			<Messages />
+		</div>
+	<TestContext.Provider/>
+    )
+  }
+  ```
 
 
 
@@ -286,3 +327,49 @@
   
   * 6.2.1、 `useMemo`会在**渲染的时候执行**，而不是渲染之后执行，这个与`useEffect`，不一样
   * 6.2.2、`useMemo`，也还是会有第二个参数，用法和`useEffect`类似  
+
+
+* <a name="chapter-seven" id="chapter-seven"></a>**7、自定义hook**
+
+* **7.1、作用：**
+
+  * 命名以`use`开头，函数内部可以调用其他的hook 
+
+* **7.2、小例子**
+
+  ```js
+  function useWidth(defaulWidth) {
+    const [width, setWidth] = useState(document.body.clientWidth)
+
+    const onChange = useCallback (() => {
+      setWidth(document.body.clientWidth)
+    }, [])
+
+    useEffect(() => {
+      window.addEventListener('resize', onChange, false)
+
+      return () => {
+        window.removeEventListener('resize', onChange, false)
+      }
+    }, [onChange])
+
+    return width
+  }
+
+    function App () {
+
+    const width = useWidth(document.body.clientWidth)
+
+    return (
+      <div> 
+        页面宽度: { width }
+      </div>
+      )
+  }
+  ```
+  
+
+
+
+
+  
