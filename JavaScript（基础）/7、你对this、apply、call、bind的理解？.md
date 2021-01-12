@@ -1,10 +1,5 @@
 # 你对this、apply、call、bind的理解？
-**参考文献**
-* [x] [「前端料包」一文彻底搞懂JavaScript中的this、call、apply和bind](https://juejin.cn/post/6844904009308831751)
 
-**常见的一些问题汇总**
-* [x] [1、apply和call的区别？]()
-* [x] [2、什么场景下用apply，什么场景下用call]()
 
 
 * apply
@@ -46,3 +41,13 @@ Person.call(this,name,age)
 ```
 
 
+
+
+
+
+## 参考文献
+* [x] [「前端料包」一文彻底搞懂JavaScript中的this、call、apply和bind](https://juejin.cn/post/6844904009308831751)
+
+## 常见的一些问题汇总
+* [x] [1、apply和call的区别？]()
+* [x] [2、什么场景下用apply，什么场景下用call]()
